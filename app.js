@@ -3,6 +3,7 @@ let gameSeq = [];
 
 let body = document.querySelector("body");
 let h2 = document.querySelector("h2");
+let level = document.querySelector("level");
 
 let btnsArr = ["red", "yellow", "green", "blue"];
 
@@ -64,6 +65,27 @@ function checkColors(idx) {
         setTimeout(function () {
             body.classList.remove("finishGame")
         }, 50)
+    }
+}
+
+function levelUp() {
+    if (score > 0 && score <= 5) {
+        level.innerText = "Level 1";
+    }
+    else if (score > 5 && score <= 15) {
+        level.innerText = "Level 2";
+    }
+    else if (score > 15 && score <= 30) {
+        level.innerText = "Level 3";
+    }
+    else if (score > 30 && score <= 50) {
+        level.innerText = "Level 4";
+    }
+    else if (score > 50 && score <= 75) {
+        level.innerText = "Level 5";
+    }
+    else {
+        h2.innerText = `Contgratulation! You Won the Game \n With Highese Score ${score}`;
     }
 }
 
