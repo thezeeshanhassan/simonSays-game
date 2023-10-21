@@ -33,7 +33,6 @@ function scoreUp() {
     console.log(gameSeq);
     let btn = document.querySelector(`.${color}`);
     btnFlash(btn);
-    levelUp();
 }
 
 function btnPress() {
