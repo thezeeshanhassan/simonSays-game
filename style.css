@@ -1,18 +1,60 @@
 body {
     text-align: center;
+    background-color: #f2f2f2;
+    /* font-family: Arial, sans-serif; */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin: 1rem 0;
+    padding-top: 5%;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #555;
+    margin: 1rem 0;
+}
+
+.btn-container {
+    margin-top: -3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
 }
 
 .btn {
     height: 150px;
     width: 150px;
-    border-radius: 10%;
-    border: 5px solid black;
-    margin: 2rem;
+    border-radius: 50%;
+    border: 5px solid #333;
+    margin: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.btn-container {
-    display: flex;
-    justify-content: center;
+.btn:active {
+    transform: scale(0.95);
+}
+
+.level {
+    background-color: #4caf50;
+    color: white;
+    font-size: 1.01rem;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: -10rem;
+    border-radius: 5px;
+    border-color: #4caf50;
+}
+
+.level:hover {
+    background-color: #45a049;
 }
 
 .red {
@@ -33,4 +75,11 @@ body {
 
 .flash {
     background-color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.finishGame {
+    background-color: red;
+    transition: background-color 0.2s;
 }
