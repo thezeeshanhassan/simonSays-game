@@ -3,11 +3,13 @@ let gameSeq = [];
 
 let body = document.querySelector("body");
 let h2 = document.querySelector("h2");
+let level = document.querySelector(".level");
 
 let btnsArr = ["red", "yellow", "green", "blue"];
 
 let start = false;
 let score = -1;
+let levelNum = -1;
 body.addEventListener("keypress", function () {
     if (start == false) {
         start = true;
@@ -27,12 +29,13 @@ function scoreUp() {
     userSeq = [];
     score += 1;
     h2.innerText = (`Score ${score}`);
-    let idx = Math.floor(Math.random() * 3);
+    let idx = Math.floor(Math.random() * 4);
     let color = btnsArr[idx];
     gameSeq.push(color);
     console.log(gameSeq);
     let btn = document.querySelector(`.${color}`);
     btnFlash(btn);
+    levelUp();
 }
 
 function btnPress() {
@@ -67,9 +70,32 @@ function checkColors(idx) {
     }
 }
 
+function levelUp() {
+    if (score == 0) {
+        level.innerText = `Level ${levelNum += 1}`;
+    }
+    else if (score > 0 && score <= 5) {
+        level.innerText = `Level ${levelNum += 1}`;
+    }
+    else if (score > 5 && score <= 15) {
+        level.innerText = `Level ${levelNum += 1}`;
+    }
+    else if (score > 15 && score <= 30) {
+        level.innerText = `Level ${levelNum += 1}`;
+    }
+    else if (score > 30 && score <= 50) {
+        level.innerText = `Level ${levelNum += 1}`;
+    }
+    else if (score > 75) {
+        h2.innerText = `Contgratulation! You Won the Game \n With Highese Score ${score}`;
+    }
+}
+
 function reset() {
     start = false;
     userSeq = [];
     gameSeq = [];
     score = 0;
+    levelNum = 0;
+
 }
